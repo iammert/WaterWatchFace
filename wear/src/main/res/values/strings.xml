@@ -15,6 +15,6 @@
   -->
 
 <resources>
-    <string name="app_name">Water</string>
-    <string name="my_analog_name">Water</string>
+    <string name="app_name">Water Watchface</string>
+    <string name="my_analog_name">Water Watchface</string>
 </resources>
