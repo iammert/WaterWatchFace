@@ -16,4 +16,5 @@
 
 <resources>
     <string name="app_name">Water</string>
+    <string name="my_analog_name">Water</string>
 </resources>

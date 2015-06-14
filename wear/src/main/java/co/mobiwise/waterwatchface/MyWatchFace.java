@@ -40,7 +40,7 @@ import java.util.concurrent.TimeUnit;
  * Analog watch face with a ticking second hand. In ambient mode, the second hand isn't shown. On
  * devices with low-bit ambient mode, the hands are drawn without anti-aliasing in ambient mode.
  */
-public class MyWatchFaceService extends CanvasWatchFaceService {
+public class MyWatchFace extends CanvasWatchFaceService {
 
     /**
      * Update rate in milliseconds for interactive mode. We update once a second to advance the
@@ -103,7 +103,7 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
 
-            setWatchFaceStyle(new WatchFaceStyle.Builder(MyWatchFaceService.this)
+            setWatchFaceStyle(new WatchFaceStyle.Builder(MyWatchFace.this)
                     .setCardPeekMode(WatchFaceStyle.PEEK_MODE_SHORT)
                     .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
                     .setShowSystemUiTime(false)
@@ -244,7 +244,7 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
             }
             mRegisteredTimeZoneReceiver = true;
             IntentFilter filter = new IntentFilter(Intent.ACTION_TIMEZONE_CHANGED);
-            MyWatchFaceService.this.registerReceiver(mTimeZoneReceiver, filter);
+            MyWatchFace.this.registerReceiver(mTimeZoneReceiver, filter);
         }
 
         private void unregisterReceiver() {
@@ -252,7 +252,7 @@ public class MyWatchFaceService extends CanvasWatchFaceService {
                 return;
             }
             mRegisteredTimeZoneReceiver = false;
-            MyWatchFaceService.this.unregisterReceiver(mTimeZoneReceiver);
+            MyWatchFace.this.unregisterReceiver(mTimeZoneReceiver);
         }
 
         private void updateTimer() {
